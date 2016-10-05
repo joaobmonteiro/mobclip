@@ -17,7 +17,7 @@ This project uses the following technologies:
 ### How it works
 
 The first step is to get the number of pages returned by the website according to your
-search criteria (Ex: houses for selling, Apartments for renting, etc). It is easily done
+search criteria (Ex: houses or apartments, sell or rent, etc). It is easily done
 by jsoup. Each page lists about 24 records.
 
 For each page we produce a message (it is simply a URL with query parameters) for Kafka.
@@ -32,9 +32,13 @@ about the property. Once all necessary data is extracted more messages are produ
 
 The last step consumes Property objects and persists them on MongoDB.
 
+### Current status
+
 At this time there is no front end. Analysis is made by querying documents on MongoDB.
 
 Price monitor is not hooked in the processing yet.
+
+### How to run
 
 Check the Kafka topics at Topics.java
 
